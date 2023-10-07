@@ -10,13 +10,13 @@ export const buildEarthScene = (
   renderer: THREE.WebGLRenderer;
 } => {
   const scene = new THREE.Scene();
-  const fov = 30;
+  const fov = 40;
   const aspect = window.innerWidth / window.innerHeight;
-  const near = 0.05;
+  const near = 0.1;
   const far = 1000;
 
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.z = 1.8;
+  camera.position.z = 1.1;
   camera.layers.enable(1);
   scene.add(camera);
 
@@ -34,7 +34,7 @@ export const buildEarthScene = (
   ambientLight.layers.set(1);
 
   const pointLight = new THREE.PointLight(0xffffff, 50.1);
-  pointLight.position.set(10, 2, 0);
+  pointLight.position.set(7, 2, 0);
   pointLight.layers.set(1);
 
   scene.add(ambientLight);
@@ -48,7 +48,7 @@ export const buildEarthMesh = (textures: Textures): THREE.Mesh => {
   const earthGeometry = new THREE.SphereGeometry(0.6, 120, 120);
 
   const earthMaterial = new THREE.MeshPhongMaterial({
-    shininess: 0,
+    shininess: 5000,
     specular: 0x222222,
     map: textures.mapTexture,
     bumpMap: textures.bumpMapTexture,

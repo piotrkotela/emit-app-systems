@@ -1,6 +1,18 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+}
+
 .section {
   position: relative;
   min-height: 100vh;
+  scroll-snap-align: start;
+  overflow: hidden;
 }
 
 .hero_section {
@@ -9,7 +21,6 @@
   align-items: center;
   justify-content: center;
   gap: 64px;
-  padding: 100px;
 }
 
 .subtitle {
@@ -17,7 +28,6 @@
   max-width: 500px;
   text-align: center;
   font-weight: 400;
-  margin-bottom: 8px;
 }
 
 .earth_bg {

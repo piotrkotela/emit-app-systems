@@ -1,10 +1,6 @@
 import { PropsWithChildren, createContext, useContext } from "react";
 import * as THREE from "three";
 
-import MapTexture from "../assets/texture/earth_day_clouds.jpg";
-import BumpMapTexture from "../assets/texture/earth_elevation.png";
-import SpecularMapTexture from "../assets/texture/specularmap.jpg";
-
 type TexturesContextValue = {
   loadingManager: THREE.LoadingManager;
   textures: {
@@ -29,9 +25,9 @@ export const TexturesProvider = ({ children }: PropsWithChildren) => {
       value={{
         loadingManager,
         textures: {
-          mapTexture: textureLoader.load(MapTexture),
-          bumpMapTexture: textureLoader.load(BumpMapTexture),
-          specularMapTexture: textureLoader.load(SpecularMapTexture),
+          mapTexture: textureLoader.load("texture/earth_day_clouds.jpg"),
+          bumpMapTexture: textureLoader.load("texture/earth_elevation.png"),
+          specularMapTexture: textureLoader.load("texture/specularmap.jpg"),
         },
       }}
     >
