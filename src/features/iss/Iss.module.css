@@ -1,0 +1,28 @@
+.iss {
+  position: absolute;
+  top: 30%;
+  right: 200px;
+  width: 200px;
+  height: 200px;
+  background-image: url("texture/iss_white.webp");
+  background-size: contain;
+  background-position: center;
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(-25px);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(-25px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
