@@ -7,6 +7,8 @@ import { SpaceshipButton } from "../../components/SpaceshipButton";
 import { HeroTitle } from "../../components/HeroTItle";
 import { textAnimation } from "../../animations/text";
 import { jsxWordSplit } from "../../lib/jsxSplit";
+import { Earth } from "../../features/earth/Earth";
+// import { Earth } from "../../features/earth/Earth";
 
 export const LandingPage = () => {
   return (
@@ -31,7 +33,9 @@ export const LandingPage = () => {
           onClick={() => console.log("hello")}
         />
       </section>
-      <section className={styles.section}>B</section>
+      <section className={styles.section}>
+        <Earth />
+      </section>
       <section className={styles.section}>C</section>
     </div>
   );
