@@ -15,6 +15,8 @@ import { Iss } from "../../components/iss/Iss";
 import Navigation from "../../components/Navigation/Navigation";
 import Emit from "./emit";
 import Data from "./data";
+import FirstDust from "./dustPages/dustFirst/FirstDust";
+import SecondDust from "./dustPages/dustSecond/SecondDust";
 
 export const LandingPage = () => {
   const { loadingManager } = useTextures();
@@ -64,9 +66,14 @@ export const LandingPage = () => {
         <Emit />
       </section>
       <section className={styles.section}>
+        <FirstDust />
+      </section>
+      <section className={styles.section}>
+        <SecondDust />
+      </section>
+      <section className={styles.section}>
         <Data />
       </section>
-      <section className={styles.section}>C</section>
     </div>
   );
 };
