@@ -4,6 +4,7 @@
   overflow: hidden;
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.9);
+  width: fit-content;
 }
 
 .button {
@@ -15,7 +16,7 @@
   padding: 1rem 2rem;
   border-radius: 999px;
   background: transparent;
-  width: 100%;
+  width: fit-content;
 
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
