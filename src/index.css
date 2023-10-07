@@ -1,6 +1,13 @@
 :root {
   --white: #fefdfc;
+  --white-dimmed: #5d5c5b;
   --black: #141414;
+  --black-dimmed: #282828;
+
+  --spaceship-swoosh: #808181;
+  --spaceship-border: #3b3d3d;
+
+  font-family: "Poppins", sans-serif;
 }
 
 * {
@@ -8,4 +15,40 @@
   padding: 0;
   box-sizing: border-box;
   color: var(--white);
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.heading1,
+.heading2,
+.heading3,
+.heading4 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.heading1 {
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.heading2 {
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.heading3 {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.heading4 {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
 }

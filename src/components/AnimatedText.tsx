@@ -1,64 +1,31 @@
-import { Variants, motion } from "framer-motion";
-import { jsxSplit } from "../lib/jsxSplit";
-
-type MotionElement = {
-  [K in keyof typeof motion]: (typeof motion)[K];
-}[keyof typeof motion];
-
-const textAnimation: Variants = {
-  hidden: { opacity: 1 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
-};
-
-const letterAnimation: Variants = {
-  hidden: {
-    opacity: 0,
-    y: -20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      ease: "easeInOut",
-      duration: 1.8,
-    },
-  },
-};
+import { motion } from "framer-motion";
+import { CSSProperties, ComponentProps, ReactNode } from "react";
+import { letterAnimation } from "../animations/text";
 
 type AnimatedTextProps = {
-  text: string;
-  textElement: MotionElement;
-  className: string;
-};
+  segments: ReactNode[];
+  className?: string;
+  style?: CSSProperties;
+} & ComponentProps<typeof motion.span>;
 
 export const AnimatedText = ({
-  text,
-  textElement: TextElement,
+  segments,
+  style,
   className,
+  ...props
 }: AnimatedTextProps) => {
   return (
-    <TextElement
-      variants={textAnimation}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      className={className}
-    >
-      {jsxSplit(text).map((letter, i) => (
+    <span style={style} className={className}>
+      {segments.map((segment, i) => (
         <motion.span
           style={{ display: "inline-block" }}
-          key={`${letter}-${i}`}
+          key={`${segment}-${i}`}
           variants={letterAnimation}
+          {...props}
         >
-          {letter}
+          {segment}
         </motion.span>
       ))}
-    </TextElement>
+    </span>
   );
 };
