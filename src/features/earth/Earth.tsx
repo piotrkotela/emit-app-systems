@@ -1,8 +1,14 @@
 import * as THREE from "three";
 import { useLayoutEffect, useRef } from "react";
 import { buildEarthMesh, buildEarthScene } from "./scene";
+import { useTextures } from "../../context/textures";
 
-export const Earth = () => {
+export type EarthProps = {
+  className?: string;
+};
+
+export const Earth = ({ className }: EarthProps) => {
+  const { textures } = useTextures();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useLayoutEffect(() => {
@@ -11,51 +17,52 @@ export const Earth = () => {
     }
 
     const { camera, scene, renderer } = buildEarthScene(canvasRef.current);
-    const earthMesh = buildEarthMesh();
+
+    const earthMesh = buildEarthMesh(textures);
     scene.add(earthMesh);
 
-    const posInitial = new THREE.Vector3(0, -0.6, 0);
-    const posFinal = new THREE.Vector3(-1, 0, -3);
-    const posKF = new THREE.VectorKeyframeTrack(
-      ".position",
-      [0, 1, 2],
-      [
-        posInitial.x,
-        posInitial.y,
-        posInitial.z,
-        posFinal.x,
-        posFinal.y,
-        posFinal.z,
-        posInitial.x,
-        posInitial.y,
-        posInitial.z,
-      ]
-    );
-    const qInitial = earthMesh.quaternion;
-    const qFinal = qInitial.clone().rotateTowards(new THREE.Quaternion(), 3.0);
-    const qKF = new THREE.QuaternionKeyframeTrack(
-      ".quaternion",
-      [0, 1, 2],
-      [
-        qInitial.x,
-        qInitial.y,
-        qInitial.z,
-        qInitial.w,
-        qFinal.x,
-        qFinal.y,
-        qFinal.z,
-        qFinal.w,
-        qInitial.x,
-        qInitial.y,
-        qInitial.z,
-        qInitial.w,
-      ]
-    );
+    // const posInitial = new THREE.Vector3(0, -0.6, 0);
+    // const posFinal = new THREE.Vector3(-1, 0, -3);
+    // const posKF = new THREE.VectorKeyframeTrack(
+    //   ".position",
+    //   [0, 1, 2],
+    //   [
+    //     posInitial.x,
+    //     posInitial.y,
+    //     posInitial.z,
+    //     posFinal.x,
+    //     posFinal.y,
+    //     posFinal.z,
+    //     posInitial.x,
+    //     posInitial.y,
+    //     posInitial.z,
+    //   ]
+    // );
+    // const qInitial = earthMesh.quaternion;
+    // const qFinal = qInitial.clone().rotateTowards(new THREE.Quaternion(), 3.0);
+    // const qKF = new THREE.QuaternionKeyframeTrack(
+    //   ".quaternion",
+    //   [0, 1, 2],
+    //   [
+    //     qInitial.x,
+    //     qInitial.y,
+    //     qInitial.z,
+    //     qInitial.w,
+    //     qFinal.x,
+    //     qFinal.y,
+    //     qFinal.z,
+    //     qFinal.w,
+    //     qInitial.x,
+    //     qInitial.y,
+    //     qInitial.z,
+    //     qInitial.w,
+    //   ]
+    // );
 
-    const clip = new THREE.AnimationClip("default", 3, [posKF, qKF]);
+    // const clip = new THREE.AnimationClip("default", 3, [posKF, qKF]);
     const mixer = new THREE.AnimationMixer(earthMesh);
-    const clipAction = mixer.clipAction(clip);
-    clipAction.play();
+    // const clipAction = mixer.clipAction(clip);
+    // clipAction.play();
 
     const clock = new THREE.Clock();
 
@@ -96,6 +103,7 @@ export const Earth = () => {
     <canvas
       style={{ display: "block", width: "100%", height: "100%" }}
       ref={canvasRef}
+      className={className}
     />
   );
 };

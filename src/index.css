@@ -4,19 +4,21 @@
   --black: #141414;
   --black-dimmed: #282828;
 
-  --spaceship-swoosh: #808181;
+  --spaceship-swoosh: #a8abab;
   --spaceship-border: #3b3d3d;
 
   font-family: "Poppins", sans-serif;
 }
 
-html,
-body,
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: var(--white);
+}
+
+body {
+  background: var(--black);
 }
 
 button {

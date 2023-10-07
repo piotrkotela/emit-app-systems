@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { Textures } from "../../context/textures";
 
 /** Creates a new scene, a camera and a renderer. */
 export const buildEarthScene = (
@@ -42,15 +43,15 @@ export const buildEarthScene = (
 };
 
 /** Creates an earth mesh. */
-export const buildEarthMesh = (): THREE.Mesh => {
+export const buildEarthMesh = (textures: Textures): THREE.Mesh => {
   const earthGeometry = new THREE.SphereGeometry(0.6, 120, 120);
 
   const earthMaterial = new THREE.MeshPhongMaterial({
     shininess: 5000,
     specular: 0x222222,
-    map: new THREE.TextureLoader().load("texture/earth_day_clouds.jpg"),
-    bumpMap: new THREE.TextureLoader().load("texture/earth_elevation.png"),
-    specularMap: new THREE.TextureLoader().load("texture/specularmap.jpg"),
+    map: textures.mapTexture,
+    bumpMap: textures.bumpMapTexture,
+    specularMap: textures.specularMapTexture,
     bumpScale: 0.5,
   });
 

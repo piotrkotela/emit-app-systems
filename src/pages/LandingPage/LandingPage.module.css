@@ -9,9 +9,9 @@
 }
 
 .section {
+  position: relative;
   min-height: 100vh;
   scroll-snap-align: start;
-  background: var(--black);
 }
 
 .hero_section {
@@ -27,4 +27,9 @@
   max-width: 500px;
   text-align: center;
   font-weight: 400;
+}
+
+.earth_bg {
+  position: absolute;
+  z-index: -10;
 }

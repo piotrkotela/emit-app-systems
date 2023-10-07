@@ -3,6 +3,7 @@
   isolation: isolate;
   overflow: hidden;
   border-radius: 999px;
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .button {
@@ -30,7 +31,7 @@
   width: 100%;
   overflow: hidden;
   border-radius: 999px;
-  padding: 1px;
+  padding: 1.5px;
 
   /* Mask gradient so that it is displayed where padding is. */
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);

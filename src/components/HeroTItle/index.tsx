@@ -17,7 +17,7 @@ export const HeroTitle = () => {
       <AnimatedText segments={jsxLetterSplit("EMIT")} />
       <span className={clsx(styles.hero_side)}>
         <AnimatedText
-          segments={jsxLetterSplit("FOR")}
+          segments={[...jsxLetterSplit("FOR"), <>&nbsp;</>]}
           className={clsx(styles.hero_for_the)}
         />
         <AnimatedText
