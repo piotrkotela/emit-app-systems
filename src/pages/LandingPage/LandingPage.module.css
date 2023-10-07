@@ -16,15 +16,14 @@
 .hero_section {
   display: flex;
   flex-direction: column;
-  gap: 4px;
   align-items: center;
   justify-content: center;
+  gap: 64px;
 }
 
-.hero_title {
-  font-size: 128px;
-}
-
-.hero_subtitle {
-  font-size: 32px;
+.subtitle {
+  font-size: 28px;
+  max-width: 500px;
+  text-align: center;
+  font-weight: 400;
 }

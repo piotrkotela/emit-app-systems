@@ -1,21 +1,34 @@
+import styles from "./LandingPage.module.css";
+
 import { motion } from "framer-motion";
 import { AnimatedText } from "../../components/AnimatedText";
-import styles from "./LandingPage.module.css";
 import { clsx } from "clsx";
+import { SpaceshipButton } from "../../components/SpaceshipButton";
+import { HeroTitle } from "../../components/HeroTItle";
+import { textAnimation } from "../../animations/text";
+import { jsxWordSplit } from "../../lib/jsxSplit";
 
 export const LandingPage = () => {
   return (
     <div className={styles.wrapper}>
-      <section className={clsx(styles.section, styles["hero_section"])}>
-        <AnimatedText
-          textElement={motion.h1}
-          text="EMIT"
-          className={clsx(styles["hero_title"])}
-        />
-        <AnimatedText
-          textElement={motion.p}
-          text="for the future"
-          className={clsx(styles["hero_subtitle"])}
+      <section className={clsx(styles.section, styles.hero_section)}>
+        <HeroTitle />
+        <motion.p
+          variants={textAnimation}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className={clsx(styles.subtitle)}
+        >
+          <AnimatedText
+            segments={jsxWordSplit(
+              "This is the story of how one molecule can reshape our world."
+            )}
+          />
+        </motion.p>
+        <SpaceshipButton
+          label={"Why methane is a huge threat"}
+          onClick={() => console.log("hello")}
         />
       </section>
       <section className={styles.section}>B</section>
