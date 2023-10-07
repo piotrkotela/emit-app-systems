@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { buildEarthMesh, buildEarthScene } from "./scene";
 import { useTextures } from "../../context/textures";
+import * as THREE from "three";
 
 export type EarthProps = {
   className?: string;
@@ -20,60 +21,53 @@ export const Earth = ({ className }: EarthProps) => {
     const earthMesh = buildEarthMesh(textures);
     scene.add(earthMesh);
 
-    // const posInitial = new THREE.Vector3(0, -0.6, 0);
-    // const posFinal = new THREE.Vector3(-1, 0, -3);
-    // const posKF = new THREE.VectorKeyframeTrack(
-    //   ".position",
-    //   [0, 1, 2],
-    //   [
-    //     posInitial.x,
-    //     posInitial.y,
-    //     posInitial.z,
-    //     posFinal.x,
-    //     posFinal.y,
-    //     posFinal.z,
-    //     posInitial.x,
-    //     posInitial.y,
-    //     posInitial.z,
-    //   ]
-    // );
+    const posInitial = new THREE.Vector3(0, -0.6, 0);
+    const posFinal = new THREE.Vector3(-1, 0, -3);
+    const posKF = new THREE.VectorKeyframeTrack(
+      ".position",
+      [2, 1],
+      [
+        posFinal.x,
+        posFinal.y,
+        posFinal.z,
+        posInitial.x,
+        posInitial.y,
+        posInitial.z,
+      ]
+    );
 
-    // const qInitial = earthMesh.quaternion;
-    // const qFinal = qInitial.clone().rotateTowards(new THREE.Quaternion(), 3.0);
-    // const qKF = new THREE.QuaternionKeyframeTrack(
-    //   ".quaternion",
-    //   [0, 1, 2],
-    //   [
-    //     qInitial.x,
-    //     qInitial.y,
-    //     qInitial.z,
-    //     qInitial.w,
-    //     qFinal.x,
-    //     qFinal.y,
-    //     qFinal.z,
-    //     qFinal.w,
-    //     qInitial.x,
-    //     qInitial.y,
-    //     qInitial.z,
-    //     qInitial.w,
-    //   ]
-    // );
+    const qInitial = earthMesh.quaternion;
+    const qFinal = qInitial.clone().rotateTowards(new THREE.Quaternion(), 3.0);
+    const qKF = new THREE.QuaternionKeyframeTrack(
+      ".quaternion",
+      [2, 1],
+      [
+        qFinal.x,
+        qFinal.y,
+        qFinal.z,
+        qFinal.w,
+        qInitial.x,
+        qInitial.y,
+        qInitial.z,
+        qInitial.w,
+      ]
+    );
 
-    // const mixer = new THREE.AnimationMixer(earthMesh);
-    // const clip = new THREE.AnimationClip("default", 3, [posKF, qKF]);
-    // const clipAction = mixer.clipAction(clip);
-    // clipAction.loop = THREE.LoopOnce;
-    // clipAction.play();
+    const mixer = new THREE.AnimationMixer(earthMesh);
+    const clip = new THREE.AnimationClip("default", 3, [posKF, qKF]);
+    const clipAction = mixer.clipAction(clip);
+    clipAction.loop = THREE.LoopOnce;
+    clipAction.play();
 
-    // const clock = new THREE.Clock();
+    const clock = new THREE.Clock();
 
     const animate = () => {
       requestAnimationFrame(animate);
-      // const delta = clock.getDelta();
+      const delta = clock.getDelta();
 
-      // if (mixer) {
-      //   mixer.update(delta);
-      // }
+      if (mixer) {
+        mixer.update(delta);
+      }
 
       earthMesh.rotation.y -= 0.0006;
       render();
