@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { useTextures } from "../../context/textures";
 import { LoadingProgress } from "../../components/LoadingProgress";
 import { Iss } from "../../components/iss/Iss";
+import Navigation from "../../components/Navigation/Navigation";
 
 export const LandingPage = () => {
   const { loadingManager } = useTextures();
@@ -34,6 +35,7 @@ export const LandingPage = () => {
 
   return (
     <div className={styles.wrapper}>
+      <Navigation />
       <section className={clsx(styles.section, styles.hero_section)}>
         <Earth className={styles.earth_bg} />
         <Iss />
