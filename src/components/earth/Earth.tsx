@@ -88,6 +88,9 @@ export const Earth = ({ className }: EarthProps) => {
 
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      // canvasRef.current?.setAttribute("width", `${window.innerWidth}px`);
+      // canvasRef.current?.setAttribute("height", `${window.innerHeight}px`);
       camera.updateProjectionMatrix();
       render();
     };

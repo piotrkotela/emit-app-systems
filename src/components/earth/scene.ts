@@ -27,6 +27,7 @@ export const buildEarthScene = (
   });
   renderer.setClearColor(0x000000, 0);
   renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1);
+  renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.autoClear = false;
 
   const ambientLight = new THREE.AmbientLight(0xffffff, 3.0);
