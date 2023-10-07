@@ -33,5 +33,5 @@
 .earth_bg {
   position: absolute;
   z-index: -10;
-  background-image: url("texture/stars.jpg");
+  background-image: url("./stars.jpg");
 }

@@ -14,9 +14,9 @@ import { LoadingProgress } from "../../components/LoadingProgress";
 import { Iss } from "../../components/iss/Iss";
 import Navigation from "../../components/Navigation/Navigation";
 // @ts-ignore
-import Emit from "./emit";
+import Emit from "./Emit/Emit";
 // @ts-ignore
-import Data from "./data";
+import Data from "./Data/data";
 // @ts-ignore
 import FirstDust from "./dustPages/dustFirst/FirstDust";
 // @ts-ignore
@@ -76,7 +76,7 @@ export const LandingPage = () => {
         <SecondDust />
       </section>
       <section className={styles.section}>
-        <Data />
+          <Data />
       </section>
     </div>
   );
