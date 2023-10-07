@@ -1,4 +1,3 @@
-import * as THREE from "three";
 import { useLayoutEffect, useRef } from "react";
 import { buildEarthMesh, buildEarthScene } from "./scene";
 import { useTextures } from "../../context/textures";
@@ -38,6 +37,7 @@ export const Earth = ({ className }: EarthProps) => {
     //     posInitial.z,
     //   ]
     // );
+
     // const qInitial = earthMesh.quaternion;
     // const qFinal = qInitial.clone().rotateTowards(new THREE.Quaternion(), 3.0);
     // const qKF = new THREE.QuaternionKeyframeTrack(
@@ -59,20 +59,21 @@ export const Earth = ({ className }: EarthProps) => {
     //   ]
     // );
 
+    // const mixer = new THREE.AnimationMixer(earthMesh);
     // const clip = new THREE.AnimationClip("default", 3, [posKF, qKF]);
-    const mixer = new THREE.AnimationMixer(earthMesh);
     // const clipAction = mixer.clipAction(clip);
+    // clipAction.loop = THREE.LoopOnce;
     // clipAction.play();
 
-    const clock = new THREE.Clock();
+    // const clock = new THREE.Clock();
 
     const animate = () => {
       requestAnimationFrame(animate);
-      const delta = clock.getDelta();
+      // const delta = clock.getDelta();
 
-      if (mixer) {
-        mixer.update(delta);
-      }
+      // if (mixer) {
+      //   mixer.update(delta);
+      // }
 
       earthMesh.rotation.y -= 0.0006;
       render();
