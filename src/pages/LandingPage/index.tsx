@@ -13,9 +13,8 @@ import { useTextures } from "../../context/textures";
 import { LoadingProgress } from "../../components/LoadingProgress";
 import { Iss } from "../../components/iss/Iss";
 import Navigation from "../../components/Navigation/Navigation";
-import FirstDust from "./dustPages/dustFirst/FirstDust";
-import SecondDust from "./dustPages/dustSecond/SecondDust";
 
+import Emit from "./emit";
 
 export const LandingPage = () => {
   const { loadingManager } = useTextures();
@@ -61,11 +60,10 @@ export const LandingPage = () => {
           onClick={() => console.log("hello")}
         />
       </section>
-      <section className={styles.section}></section>
-      <section className={styles.section}></section>
-      <section className={styles.section}></section>
-      <section className={styles.section}></section>
-      <section className={styles.section}></section>
+      <section className={styles.section}>
+        <Emit />
+      </section>
+      <section className={styles.section}>C</section>
     </div>
   );
 };
