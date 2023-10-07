@@ -7,8 +7,30 @@ import { SpaceshipButton } from "../../components/SpaceshipButton";
 import { HeroTitle } from "../../components/HeroTItle";
 import { textAnimation } from "../../animations/text";
 import { jsxWordSplit } from "../../lib/jsxSplit";
+import { Earth } from "../../features/earth/Earth";
+import { useEffect, useState } from "react";
+import { useTextures } from "../../context/textures";
+import { LoadingProgress } from "../../components/LoadingProgress";
 
 export const LandingPage = () => {
+  const { loadingManager } = useTextures();
+  const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    loadingManager.onProgress = (_, itemsLoaded, itemsTotal) => {
+      setProgress(itemsTotal / itemsLoaded);
+    };
+
+    loadingManager.onLoad = () => {
+      setLoading(false);
+    };
+  }, []);
+
+  if (loading) {
+    return <LoadingProgress progress={progress} />;
+  }
+
   return (
     <div className={styles.wrapper}>
       <section className={clsx(styles.section, styles.hero_section)}>
@@ -27,12 +49,13 @@ export const LandingPage = () => {
           />
         </motion.p>
         <SpaceshipButton
-          label={"Why methane is a huge threat"}
+          label={"See why methane is a huge threat"}
           onClick={() => console.log("hello")}
         />
       </section>
-      <section className={styles.section}>B</section>
+      <section className={styles.section}></section>
       <section className={styles.section}>C</section>
+      <Earth className={styles.earth_bg} />
     </div>
   );
 };
