@@ -17,6 +17,8 @@ import Emit from "./emit";
 import Data from "./data";
 import FirstDust from "./dustPages/dustFirst/FirstDust";
 import SecondDust from "./dustPages/dustSecond/SecondDust";
+import { MethaneFirst } from "./methane/MethaneFirst";
+import { MethaneSecond } from "./methane/MethaneSecond";
 
 export const LandingPage = () => {
   const { loadingManager } = useTextures();
@@ -61,6 +63,12 @@ export const LandingPage = () => {
           label={"See why methane is a huge threat"}
           onClick={() => console.log("hello")}
         />
+      </section>
+      <section className={styles.section}>
+        <MethaneFirst />
+      </section>
+      <section className={styles.section}>
+        <MethaneSecond />
       </section>
       <section className={styles.section}>
         <Emit />
