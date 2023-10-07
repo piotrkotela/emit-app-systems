@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  background: var(--black);
+}
+
+.hero_section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero_title {
+  font-size: 128px;
+}
+
+.hero_subtitle {
+  font-size: 32px;
+}
