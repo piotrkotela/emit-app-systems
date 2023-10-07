@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+// @ts-ignore
 import { LandingPage } from "./pages/LandingPage/index.tsx";
 import { TexturesProvider } from "./context/textures.tsx";
 

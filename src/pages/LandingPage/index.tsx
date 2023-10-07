@@ -13,9 +13,13 @@ import { useTextures } from "../../context/textures";
 import { LoadingProgress } from "../../components/LoadingProgress";
 import { Iss } from "../../components/iss/Iss";
 import Navigation from "../../components/Navigation/Navigation";
+// @ts-ignore
 import Emit from "./emit";
+// @ts-ignore
 import Data from "./data";
+// @ts-ignore
 import FirstDust from "./dustPages/dustFirst/FirstDust";
+// @ts-ignore
 import SecondDust from "./dustPages/dustSecond/SecondDust";
 
 export const LandingPage = () => {
