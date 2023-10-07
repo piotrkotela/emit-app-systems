@@ -1,0 +1,23 @@
+.hero_title {
+  display: flex;
+  gap: 16px;
+  line-height: 80px;
+}
+
+.hero_side {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  line-height: 38px;
+  font-weight: 600;
+}
+
+.hero_for_the {
+  font-size: 36px;
+}
+
+.hero_future {
+  font-size: 40px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}

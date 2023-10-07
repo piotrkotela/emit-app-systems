@@ -1,0 +1,101 @@
+.container {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  background: transparent;
+  width: 100%;
+
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.swoosh_mask {
+  pointer-events: none;
+  position: absolute;
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 999px;
+  padding: 1.5px;
+
+  /* Mask gradient so that it is displayed where padding is. */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: subtract;
+  -webkit-mask-composite: source-out;
+}
+
+.glow_container {
+  position: absolute;
+  z-index: -20;
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 999px;
+  filter: blur(24px);
+}
+
+.glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  aspect-ratio: 1/5;
+  width: 120%;
+  transform: translateX(-0.5rem) translateY(-0.5rem);
+  overflow: hidden;
+  border-radius: 999px;
+  background-size: cover;
+
+  animation: swooshSpin 4s infinite linear;
+  background-image: conic-gradient(
+    from 0 at 50% 50%,
+    var(--spaceship-swoosh) 0deg,
+    var(--spaceship-border) 60deg,
+    var(--spaceship-border) 310deg,
+    var(--spaceship-swoosh) 360deg
+  );
+}
+
+.swoosh {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  aspect-ratio: 1/1;
+  width: 120%;
+  transform: translateX(-0.5rem) translateY(-0.5rem);
+  background-size: cover;
+
+  animation: swooshSpin 4s infinite linear;
+  background-image: conic-gradient(
+    from 0 at 50% 50%,
+    var(--spaceship-swoosh) 0deg,
+    var(--spaceship-border) 60deg,
+    var(--spaceship-border) 310deg,
+    var(--spaceship-swoosh) 360deg
+  );
+}
+
+@keyframes swooshSpin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
