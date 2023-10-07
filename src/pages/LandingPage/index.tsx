@@ -7,11 +7,11 @@ import { SpaceshipButton } from "../../components/SpaceshipButton";
 import { HeroTitle } from "../../components/HeroTItle";
 import { textAnimation } from "../../animations/text";
 import { jsxWordSplit } from "../../lib/jsxSplit";
-import { Earth } from "../../features/earth/Earth";
+import { Earth } from "../../components/earth/Earth";
 import { useEffect, useState } from "react";
 import { useTextures } from "../../context/textures";
 import { LoadingProgress } from "../../components/LoadingProgress";
-import { Iss } from "../../features/iss/Iss";
+import { Iss } from "../../components/iss/Iss";
 
 export const LandingPage = () => {
   const { loadingManager } = useTextures();
@@ -35,6 +35,7 @@ export const LandingPage = () => {
   return (
     <div className={styles.wrapper}>
       <section className={clsx(styles.section, styles.hero_section)}>
+        <Earth className={styles.earth_bg} />
         <Iss />
         <HeroTitle />
         <motion.p
@@ -57,7 +58,6 @@ export const LandingPage = () => {
       </section>
       <section className={styles.section}></section>
       <section className={styles.section}>C</section>
-      <Earth className={styles.earth_bg} />
     </div>
   );
 };
