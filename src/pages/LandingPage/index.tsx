@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { AnimatedText } from "../../components/AnimatedText";
 import styles from "./LandingPage.module.css";
 import { clsx } from "clsx";
+import MapChart from "../../components/Map/MapChart";
 
 export const LandingPage = () => {
   return (
@@ -18,7 +19,7 @@ export const LandingPage = () => {
           className={clsx(styles["hero_subtitle"])}
         />
       </section>
-      <section className={styles.section}>B</section>
+      <section className={styles.section}><MapChart /></section>
       <section className={styles.section}>C</section>
     </div>
   );
