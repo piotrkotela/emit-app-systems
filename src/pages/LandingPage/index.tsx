@@ -11,6 +11,7 @@ import { Earth } from "../../features/earth/Earth";
 import { useEffect, useState } from "react";
 import { useTextures } from "../../context/textures";
 import { LoadingProgress } from "../../components/LoadingProgress";
+import { Iss } from "../../features/iss/Iss";
 
 export const LandingPage = () => {
   const { loadingManager } = useTextures();
@@ -34,6 +35,7 @@ export const LandingPage = () => {
   return (
     <div className={styles.wrapper}>
       <section className={clsx(styles.section, styles.hero_section)}>
+        <Iss />
         <HeroTitle />
         <motion.p
           variants={textAnimation}
