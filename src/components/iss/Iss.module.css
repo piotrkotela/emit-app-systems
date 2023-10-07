@@ -4,7 +4,7 @@
   left: 12%;
   width: 450px;
   height: 450px;
-  background-image: url("texture/iss.webp");
+  background-image: url("./iss_white.webp");
   background-size: contain;
   background-position: center;
   z-index: -1;

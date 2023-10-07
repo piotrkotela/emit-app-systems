@@ -13,10 +13,16 @@ import { useTextures } from "../../context/textures";
 import { LoadingProgress } from "../../components/LoadingProgress";
 import { Iss } from "../../components/iss/Iss";
 import Navigation from "../../components/Navigation/Navigation";
-import Emit from "./emit";
-import Data from "./data";
+// @ts-ignore
+import Emit from "./Emit/Emit";
+// @ts-ignore
+import Data from "./Data/data";
+// @ts-ignore
 import FirstDust from "./dustPages/dustFirst/FirstDust";
+// @ts-ignore
 import SecondDust from "./dustPages/dustSecond/SecondDust";
+import { MethaneFirst } from "./methane/MethaneFirst";
+import { MethaneSecond } from "./methane/MethaneSecond";
 
 export const LandingPage = () => {
   const { loadingManager } = useTextures();
@@ -59,6 +65,12 @@ export const LandingPage = () => {
         </motion.p>
       </section>
       <section className={styles.section}>
+        <MethaneFirst />
+      </section>
+      <section className={styles.section}>
+        <MethaneSecond />
+      </section>
+      <section className={styles.section}>
         <Emit />
       </section>
       <section className={styles.section}>
@@ -68,7 +80,7 @@ export const LandingPage = () => {
         <SecondDust />
       </section>
       <section className={styles.section}>
-        <Data />
+          <Data />
       </section>
     </div>
   );
