@@ -1,7 +1,7 @@
 :root {
   --white: #fefdfc;
   --white-dimmed: #5d5c5b;
-  --black: #121212;
+  --black: #141414;
   --black-dimmed: #282828;
 
   --spaceship-swoosh: #a8abab;
@@ -55,20 +55,4 @@ button {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-}
-
-.flex {
-  display: flex;
-}
-
-.column {
-  flex-direction: column;
-}
-
-.justify_center {
-  justify-content: center;
-}
-
-.align_center {
-  align-items: center;
 }

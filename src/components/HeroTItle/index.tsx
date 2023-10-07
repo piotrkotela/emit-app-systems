@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import styles from "./Hero.module.css";
-import { AnimatedText } from "../../../../components/AnimatedText";
-import { jsxLetterSplit } from "../../../../lib/jsxSplit";
-import { textAnimation } from "../../../../animations/text";
+import styles from "./HeroTitle.module.css";
+import { AnimatedText } from "../AnimatedText";
+import { jsxLetterSplit } from "../../lib/jsxSplit";
+import { textAnimation } from "../../animations/text";
 
 export const HeroTitle = () => {
   return (
