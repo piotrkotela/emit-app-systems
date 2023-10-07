@@ -1,0 +1,46 @@
+.dustContainer {
+  font-family: Poppins;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 70vw;
+  display: flex;
+  flex: 1;
+  gap: 40px;
+}
+
+.dustLeft {
+  flex: 1;
+}
+.dustRight {
+  flex: 1;
+}
+
+.dustLeft > p {
+  font-family: Montserrat;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.dustLeft > p:nth-child(2) {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.dustRight p {
+  margin-bottom: 20px;
+}
+
+.backgroundSecond {
+  position: absolute;
+  right: 40vw;
+
+  width: 1700px;
+  height: 1500px;
+  transform: rotate(50deg);
+  background: url("./abstract.png") no-repeat;
+  background-size: cover;
+  filter: blur(3px);
+}

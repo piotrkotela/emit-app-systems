@@ -12,6 +12,7 @@
   position: relative;
   min-height: 100vh;
   scroll-snap-align: start;
+  overflow: hidden;
 }
 
 .hero_section {
