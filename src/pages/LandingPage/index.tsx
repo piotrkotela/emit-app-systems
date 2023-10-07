@@ -13,8 +13,8 @@ import { useTextures } from "../../context/textures";
 import { LoadingProgress } from "../../components/LoadingProgress";
 import { Iss } from "../../components/iss/Iss";
 import Navigation from "../../components/Navigation/Navigation";
-
 import Emit from "./emit";
+import Data from "./data";
 
 export const LandingPage = () => {
   const { loadingManager } = useTextures();
@@ -62,6 +62,9 @@ export const LandingPage = () => {
       </section>
       <section className={styles.section}>
         <Emit />
+      </section>
+      <section className={styles.section}>
+        <Data />
       </section>
       <section className={styles.section}>C</section>
     </div>

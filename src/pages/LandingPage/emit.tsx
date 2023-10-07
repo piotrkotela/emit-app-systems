@@ -7,6 +7,7 @@ const Emit = () => {
       <div className={styles.earth}></div>
       <div className={clsx(styles.iss, styles.floating)}></div>
       <div className={clsx(styles.orbit)}></div>
+      <div className={clsx(styles.orbit)}></div>
       <div className={styles.sideContainer}>
         <div className={clsx("heading1")}>EMIT</div>
         <div className={clsx(styles.heading1smaller)}>
