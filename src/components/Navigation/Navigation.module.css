@@ -1,8 +1,11 @@
 .navigation {
     width: 80vw;
     height: 60px;
-    border: solid 1px white;
-    background-color: #1c1c1c;
+    border: 1px solid #FDFCFC;
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 1px 1px 0px 0px rgba(255, 255, 255, 0.35) inset;
+    backdrop-filter: blur(50px);
+    
     color: white;
     position: fixed;
     border-radius: 30px;
