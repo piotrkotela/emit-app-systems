@@ -1,14 +1,13 @@
 import * as THREE from "three";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 
 export function Earth() {
   const canvasRef = useRef(null);
 
-  useLayoutEffect(() => {
-    // scene setup
-    const scene = new THREE.Scene();
+  useEffect(() => {}, []);
 
-    // camera setup
+  useLayoutEffect(() => {
+    const scene = new THREE.Scene();
     const fov = 40;
     const aspect = window.innerWidth / window.innerHeight;
     const near = 0.1;
@@ -17,8 +16,6 @@ export function Earth() {
     const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
     camera.position.z = 1.1;
     scene.add(camera);
-
-    // renderer setup
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
       canvas: canvasRef.current!,
@@ -31,10 +28,8 @@ export function Earth() {
     );
     renderer.autoClear = false;
 
-    // earth geometry
     const earthGeometry = new THREE.SphereGeometry(0.6, 120, 120);
 
-    // earth material
     const earthMaterial = new THREE.MeshPhongMaterial({
       shininess: 5000,
       specular: 0x222222,
@@ -47,14 +42,12 @@ export function Earth() {
 
     camera.layers.enable(1);
 
-    // earth mesh
     const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
     earthMesh.position.set(0, -0.6, 0);
     earthMesh.rotation.set(150, 45, 45);
     earthMesh.layers.set(1);
     scene.add(earthMesh);
 
-    // ambient light
     const ambientlight = new THREE.AmbientLight(0xffffff, 3.0);
     ambientlight.layers.set(1);
     scene.add(ambientlight);
@@ -64,7 +57,6 @@ export function Earth() {
     pointLight.layers.set(1);
     scene.add(pointLight);
 
-    // handling resizing
     window.addEventListener(
       "resize",
       () => {
@@ -76,11 +68,59 @@ export function Earth() {
       false
     );
 
-    // spinning animation
+    const posInitial = new THREE.Vector3(0, -0.6, 0);
+    const posFinal = new THREE.Vector3(-1, 0, -3);
+    const posKF = new THREE.VectorKeyframeTrack(
+      ".position",
+      [0, 1, 2],
+      [
+        posInitial.x,
+        posInitial.y,
+        posInitial.z,
+        posFinal.x,
+        posFinal.y,
+        posFinal.z,
+        posInitial.x,
+        posInitial.y,
+        posInitial.z,
+      ]
+    );
+    const qInitial = earthMesh.quaternion;
+    const qFinal = qInitial.clone().rotateTowards(new THREE.Quaternion(), 3.0);
+    const qKF = new THREE.QuaternionKeyframeTrack(
+      ".quaternion",
+      [0, 1, 2],
+      [
+        qInitial.x,
+        qInitial.y,
+        qInitial.z,
+        qInitial.w,
+        qFinal.x,
+        qFinal.y,
+        qFinal.z,
+        qFinal.w,
+        qInitial.x,
+        qInitial.y,
+        qInitial.z,
+        qInitial.w,
+      ]
+    );
+
+    const clip = new THREE.AnimationClip("default", 3, [posKF, qKF]);
+    const mixer = new THREE.AnimationMixer(earthMesh);
+    const clipAction = mixer.clipAction(clip);
+    clipAction.play();
+
+    const clock = new THREE.Clock();
     const animate = () => {
       requestAnimationFrame(animate);
-      earthMesh.rotation.y -= 0.006;
+      const delta = clock.getDelta();
 
+      if (mixer) {
+        mixer.update(delta);
+      }
+
+      earthMesh.rotation.y -= 0.0006;
       render();
     };
 
