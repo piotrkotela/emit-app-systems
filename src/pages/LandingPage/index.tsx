@@ -3,7 +3,6 @@ import styles from "./LandingPage.module.css";
 import { motion } from "framer-motion";
 import { AnimatedText } from "../../components/AnimatedText";
 import { clsx } from "clsx";
-import { SpaceshipButton } from "../../components/SpaceshipButton";
 import { HeroTitle } from "../../components/HeroTItle";
 import { textAnimation } from "../../animations/text";
 import { jsxWordSplit } from "../../lib/jsxSplit";
@@ -23,6 +22,7 @@ import FirstDust from "./dustPages/dustFirst/FirstDust";
 import SecondDust from "./dustPages/dustSecond/SecondDust";
 import { MethaneFirst } from "./methane/MethaneFirst";
 import { MethaneSecond } from "./methane/MethaneSecond";
+import Stories from "./stories/Stories";
 
 export const LandingPage = () => {
   const { loadingManager } = useTextures();
@@ -80,7 +80,10 @@ export const LandingPage = () => {
         <SecondDust />
       </section>
       <section className={styles.section}>
-          <Data />
+        <Data />
+      </section>
+      <section className={styles.section}>
+        <Stories />
       </section>
     </div>
   );
