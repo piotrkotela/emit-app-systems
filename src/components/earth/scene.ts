@@ -57,7 +57,7 @@ export const buildEarthMesh = (textures: Textures): THREE.Mesh => {
   });
 
   const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
-  earthMesh.position.set(0, -0.6, 0);
+  earthMesh.position.set(0, -0.75, 0);
   earthMesh.rotation.set(150, 45, 45);
   earthMesh.layers.set(1);
 

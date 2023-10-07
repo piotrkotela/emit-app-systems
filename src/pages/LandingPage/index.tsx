@@ -63,10 +63,6 @@ export const LandingPage = () => {
             )}
           />
         </motion.p>
-        <SpaceshipButton
-          label={"See why methane is a huge threat"}
-          onClick={() => console.log("hello")}
-        />
       </section>
       <section className={styles.section}>
         <MethaneFirst />
