@@ -13,7 +13,6 @@ import { useTextures } from "../../context/textures";
 import { LoadingProgress } from "../../components/LoadingProgress";
 import { Iss } from "../../components/iss/Iss";
 import Navigation from "../../components/Navigation/Navigation";
-
 import Emit from "./emit";
 
 export const LandingPage = () => {
