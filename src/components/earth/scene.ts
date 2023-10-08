@@ -18,7 +18,6 @@ export const buildEarthScene = (
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
   camera.position.z = 1.7;
   camera.position.y = -0.1;
-  console.log(camera.position);
   camera.layers.enable(1);
   scene.add(camera);
 

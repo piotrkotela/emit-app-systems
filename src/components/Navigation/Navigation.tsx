@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef } from "react";
 import styles from "./Navigation.module.css";
 
 interface SectionRefs {
@@ -12,12 +12,10 @@ interface NavigationProps {
   refs: SectionRefs;
 }
 const Navigation = forwardRef<HTMLElement, NavigationProps>((props, _) => {
-
   const scrollIntoViewHandler = (sectionRef: React.RefObject<HTMLElement>) => {
-    sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }
+    sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
-  console.log('>>>', JSON.stringify(props))
   return (
     <div className={styles.navigation}>
       <div className={styles.navigationContainer}>
