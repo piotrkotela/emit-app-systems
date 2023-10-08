@@ -75,8 +75,8 @@ const stories: ComponentProps<typeof StoryPage>[] = [
         vector borne <br /> diseases
       </>
     ),
-    location: "Pakistan",
-    date: "06-10.2022",
+    location: "Africa",
+    date: "2021",
     story:
       "According to the WHO, nearly half of the world's population was at risk of malaria in 2021, with an estimated 247 million cases worldwide. As many as 95% of malaria cases and 96% of malaria-related deaths were reported in the African Region that year, with children under the age of 5 accounting for 80% of victims. Malaria elimination involves stopping local transmission in specific areas through targeted interventions.",
     emitImpact:
