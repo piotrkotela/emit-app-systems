@@ -91,6 +91,8 @@ export const LandingPage = () => {
       <Navigation />
       <section className={clsx(styles.section, styles.hero_section)}>
         <div className={styles.stars}></div>
+        <div className={styles.stars}></div>
+        <div className={styles.stars}></div>
         <Earth className={styles.earth_bg} />
         <Iss />
         <HeroTitle />
