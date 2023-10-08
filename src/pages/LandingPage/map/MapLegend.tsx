@@ -5,7 +5,7 @@ const MapLegend = () => {
     <div>
       <div className={styles.legend}>
         <span>0</span>
-        <span>26</span>
+        <span>20</span>
       </div>
       <div className={styles.legendBar} />
       <span className={styles.imei}>IMEI INDEX</span>
