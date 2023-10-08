@@ -6,10 +6,7 @@ import { scaleLinear } from "d3-scale";
 
 const MapChart = ({setImeiContent}: any) => {
   //@ts-ignore
-  const colorScale = scaleLinear().domain([0, 51]).range(["#2E2E2E", "#3705E4"]);
-  const showPopUpHandler = (x: any) => {
-    console.log(x);
-  };
+  const colorScale = scaleLinear().domain([0, 26]).range(["#2E2E2E", "#3705E4"]);
   return (
         <ComposableMap width={800} height={500}>
           <Geographies geography={geoData}>
