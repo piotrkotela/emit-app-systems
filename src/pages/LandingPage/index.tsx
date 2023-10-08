@@ -10,7 +10,6 @@ import { Earth } from "../../components/earth/Earth";
 import { ComponentProps, useEffect, useState } from "react";
 import { useTextures } from "../../context/textures";
 import { LoadingProgress } from "../../components/LoadingProgress";
-import { Iss } from "../../components/iss/Iss";
 import Navigation from "../../components/Navigation/Navigation";
 import { Emit } from "./Emit";
 import { Data } from "./Data";
@@ -25,6 +24,9 @@ import GarbageImage from "../../assets/images/garbage.png";
 import FloodsImage from "../../assets/images/floods.png";
 import MosquitoImage from "../../assets/images/mosquito.png";
 import { Future } from "./future/Future";
+import { DustFuture } from "./future/DustFuture";
+import { FireFuture } from "./future/FireFuture";
+import { LightPollution } from "./future/LightPollution";
 
 const stories: ComponentProps<typeof StoryPage>[] = [
   {
@@ -187,6 +189,34 @@ export const LandingPage = () => {
         className={styles.section}
       >
         <Future />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-300px" }}
+        className={styles.section}
+      >
+        <DustFuture />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-300px" }}
+        className={styles.section}
+        style={{ overflow: "unset" }}
+      >
+        <FireFuture />
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-300px" }}
+        className={styles.section}
+        style={{ overflow: "unset" }}
+      >
+        <LightPollution />
       </motion.section>
     </div>
   );
