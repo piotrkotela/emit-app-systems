@@ -94,7 +94,6 @@ export const LandingPage = () => {
         <div className={styles.stars}></div>
         <div className={styles.stars}></div>
         <Earth className={styles.earth_bg} />
-        <Iss />
         <HeroTitle />
         <motion.p
           variants={textAnimation}
