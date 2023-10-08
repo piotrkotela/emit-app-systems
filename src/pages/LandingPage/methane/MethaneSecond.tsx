@@ -14,11 +14,11 @@ export const MethaneSecond = () => {
       <div className={styles.content}>
         <h1 className={clsx("heading1", styles.heading)}>80x</h1>
         <h2 className={styles.subtitle}>
-          METHAN IS MORE DANGEROUS THAN ANY OTHER MOLECULE
+          METHANE IS MORE DANGEROUS THAN CARBON DIOXIDE MOLECULE
         </h2>
         <p>
           As it wafted into the atmosphere, methane joined the league of
-          greenhouse gases, a potent player in the grand theater of climate
+          greenhouse gases, a major player in the grand theater of climate
           change. Its molecules had a remarkable knack for trapping heat, far
           more efficient than their carbon dioxide counterparts.
         </p>
