@@ -15,7 +15,7 @@ export const DustTwo = () => {
           <p>{CONTENT.description_up}</p>
           <p>{CONTENT.description_down}</p>
         </div>
-        <div className={styles.dustLeft} style={{ marginLeft: 128 }}>
+        <div className={styles.dustLeft}>
           <p>dust</p>
           <p>It enhanced the global warming</p>
         </div>
