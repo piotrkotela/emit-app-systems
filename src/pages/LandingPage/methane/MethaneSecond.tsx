@@ -12,7 +12,7 @@ export const MethaneSecond = () => {
         className={styles.background_image}
       />
       <div className={styles.content}>
-        <h1 className={clsx("heading1", styles.heading)}>72x</h1>
+        <h1 className={clsx("heading1", styles.heading)}>80x</h1>
         <h2 className={styles.subtitle}>
           METHAN IS MORE DANGEROUS THAN ANY OTHER MOLECULE
         </h2>
