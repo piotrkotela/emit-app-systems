@@ -1,7 +1,8 @@
 .hero_title {
   display: flex;
   gap: 16px;
-  line-height: 80px;
+  font-size: min(30vw, 512px);
+  z-index: -20;
 }
 
 .hero_side {

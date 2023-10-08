@@ -16,7 +16,9 @@ export const buildEarthScene = (
   const far = 1000;
 
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.z = 1.1;
+  camera.position.z = 1.7;
+  camera.position.y = -0.1;
+  console.log(camera.position);
   camera.layers.enable(1);
   scene.add(camera);
 
@@ -48,7 +50,7 @@ export const buildEarthMesh = (textures: Textures): THREE.Mesh => {
   const earthGeometry = new THREE.SphereGeometry(0.6, 120, 120);
 
   const earthMaterial = new THREE.MeshPhongMaterial({
-    shininess: 5000,
+    shininess: 100,
     specular: 0x222222,
     map: textures.mapTexture,
     bumpMap: textures.bumpMapTexture,

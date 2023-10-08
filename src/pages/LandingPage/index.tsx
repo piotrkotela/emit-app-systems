@@ -90,6 +90,7 @@ export const LandingPage = () => {
     <div className={styles.wrapper}>
       <Navigation />
       <section className={clsx(styles.section, styles.hero_section)}>
+        <div className={styles.stars}></div>
         <Earth className={styles.earth_bg} />
         <Iss />
         <HeroTitle />
@@ -164,8 +165,9 @@ export const LandingPage = () => {
         <Stories />
       </motion.section>
 
-      {stories.map((storyProps) => (
+      {stories.map((storyProps, i) => (
         <motion.section
+          key={`page-${i}`}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-300px" }}
