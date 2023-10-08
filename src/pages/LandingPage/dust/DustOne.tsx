@@ -4,9 +4,10 @@ const CONTENT = {
   description_down:
     "From the iron-rich soils of arid regions to volcanic eruptions, nature played its part in releasing these particles into the air. However, human activities exacerbated the problem as factories belched out plumes of iron oxide-laden smoke and neglected infrastructure crumbled.",
 };
-import styles from "./FistDust.module.css";
 
-const FirstDust = () => {
+import styles from "./DustOne.module.css";
+
+export const DustOne = () => {
   return (
     <>
       <div className={styles.background} />
@@ -23,4 +24,3 @@ const FirstDust = () => {
     </>
   );
 };
-export default FirstDust;

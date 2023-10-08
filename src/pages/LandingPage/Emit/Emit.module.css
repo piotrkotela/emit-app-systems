@@ -1,0 +1,67 @@
+.container {
+  height: 100%;
+  padding: 0 64px;
+}
+
+.placeholder {
+  flex: 1;
+}
+
+.description {
+  max-width: 500px;
+}
+
+.layout {
+  display: flex;
+  gap: 128px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.content_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.images_container {
+  position: absolute;
+  top: 20%;
+}
+
+.earth {
+  position: absolute;
+  top: 0;
+  width: 600px;
+}
+
+.iss {
+  position: absolute;
+  top: 0;
+  width: 400px;
+  left: 400px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.orbit {
+  position: absolute;
+  width: 700px;
+}

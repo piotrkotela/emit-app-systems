@@ -1,54 +1,40 @@
-.heading1smaller {
-  color: var(--light, #f4f4f4);
-  font-family: Montserrat;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+.container {
+  height: 100%;
+  padding: 0 64px;
 }
 
-.subtitle {
-  color: var(--light, #f4f4f4);
-  font-family: Montserrat;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.5px;
+.placeholder {
+  flex: 1;
 }
 
 .description {
-  font-size: 16px;
   max-width: 500px;
-  text-align: center;
-  font-weight: 400;
-  text-align: left;
-
-  margin-top: 20px;
 }
 
-.sideContainer {
-  position: absolute;
-  width: 45%;
-  left: 15%;
+.layout {
   display: flex;
-  flex-direction: column;
+  gap: 128px;
+  align-items: center;
   justify-content: center;
+  width: 100%;
   height: 100%;
 }
 
-.earth {
+.content_container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.content_spacing {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.planet {
   position: absolute;
-  right: -40%;
-  top: 20%;
-  width: 110%;
-  height: 110%;
-  background-image: url("./assets/download.png");
-  background-size: contain;
-  background-position: center;
-  z-index: -10;
-  background-repeat: no-repeat;
-  background-origin: calc(50%);
+  width: 600px;
+  right: 0;
+  bottom: 0;
 }
