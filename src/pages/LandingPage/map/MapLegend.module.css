@@ -1,0 +1,31 @@
+.legend {
+  display: flex;
+  justify-content: space-between;
+  color: var(--light-medium, #d8d8d8);
+
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.5px;
+}
+
+.legendBar {
+  width: 200px;
+  height: 20px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #2E2E2E 0%, #3705E4 96.88%);
+}
+
+.imei {
+  float: right;
+  margin-top: 12px;
+
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.5px;
+}
