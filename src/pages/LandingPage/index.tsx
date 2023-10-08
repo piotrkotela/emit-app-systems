@@ -113,6 +113,14 @@ export const LandingPage = () => {
         viewport={{ once: true, margin: "-300px" }}
         className={styles.section}
       >
+        <Emit />
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-300px" }}
+        className={styles.section}
+      >
         <MethaneFirst />
       </motion.section>
       <motion.section
@@ -123,14 +131,7 @@ export const LandingPage = () => {
       >
         <MethaneSecond />
       </motion.section>
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-300px" }}
-        className={styles.section}
-      >
-        <Emit />
-      </motion.section>
+
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

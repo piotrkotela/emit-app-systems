@@ -17,7 +17,7 @@ export const Emit = () => {
       <div className={styles.layout}>
         <div className={styles.placeholder}></div>
         <div className={styles.content_container}>
-          <div className="heading1">data</div>
+          <div className="heading1">EMIT</div>
           <div className="heading4">
             The Earth Surface Mineral
             <br /> Dust Source Investigation
@@ -31,7 +31,7 @@ export const Emit = () => {
           <div className={styles.description}>
             Its primary mission, though, is understanding how surface dust
             affects global and local climate change. EMIT's data is openly
-            accessible for further research."
+            accessible for further research.
           </div>
         </div>
       </div>
