@@ -20,20 +20,18 @@ export const DustFuture = () => {
             <img
               src={Scan1Image}
               className={styles.scan}
-              alt="Image without Highlighted Iron Oxide Minerals"
             />
             <figcaption>
-              Image without Highlighted Iron Oxide Minerals
+              Image of Mapped Iron Oxide Minerals Dust (Yellow)
             </figcaption>
           </figure>
           <figure>
             <img
               src={Scan2Image}
               className={styles.scan}
-              alt="Image of Mapped Iron Oxide Minerals Dust (Yellow)"
             />
             <figcaption>
-              Image of Mapped Iron Oxide Minerals Dust (Yellow)
+              Image without Highlighted Iron Oxide Minerals
             </figcaption>
           </figure>
         </div>

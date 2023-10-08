@@ -34,8 +34,11 @@ import FloodsImage from "../../assets/images/floods.png";
 import MosquitoImage from "../../assets/images/mosquito.png";
 //@ts-ignore
 import { Future } from "./future/Future";
+//@ts-ignore
 import { DustFuture } from "./future/DustFuture";
+//@ts-ignore
 import { FireFuture } from "./future/FireFuture";
+//@ts-ignore
 import { LightPollution } from "./future/LightPollution";
 //@ts-ignore
 import Map from "./map/Map";
@@ -138,7 +141,7 @@ export const LandingPage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-300px" }}
+        viewport={{ once: true, margin: "-100px" }}
         className={styles.section}
       >
         <Emit />
@@ -146,7 +149,7 @@ export const LandingPage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-300px" }}
+        viewport={{ once: true, margin: "-100px" }}
         className={styles.section}
       >
         <MethaneFirst />
@@ -154,7 +157,7 @@ export const LandingPage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-300px" }}
+        viewport={{ once: true, margin: "-100px" }}
         className={styles.section}
       >
         <MethaneSecond />
@@ -163,7 +166,7 @@ export const LandingPage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-300px" }}
+        viewport={{ once: true, margin: "-100px" }}
         className={styles.section}
       >
         <DustOne />
@@ -171,7 +174,7 @@ export const LandingPage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-300px" }}
+        viewport={{ once: true, margin: "-100px" }}
         className={styles.section}
       >
         <DustTwo />
@@ -179,7 +182,7 @@ export const LandingPage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-300px" }}
+        viewport={{ once: true, margin: "-100px" }}
         className={styles.section}
       >
         <Data />
@@ -187,7 +190,7 @@ export const LandingPage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-300px" }}
+        viewport={{ once: true, margin: "-100px" }}
         className={styles.section}
       >
         <Map ref={mapRef} />
@@ -195,7 +198,7 @@ export const LandingPage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-300px" }}
+        viewport={{ once: true, margin: "-100px" }}
         className={styles.section}
       >
         <Stories ref={storiesRef}/>
@@ -206,7 +209,7 @@ export const LandingPage = () => {
           key={`page-${i}`}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-300px" }}
+          viewport={{ once: true, margin: "-100px" }}
           className={styles.section}
         >
           <StoryPage {...storyProps} />
@@ -216,7 +219,7 @@ export const LandingPage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-300px" }}
+        viewport={{ once: true, margin: "-100px" }}
         className={styles.section}
       >
         <Future ref={futureRef} />
@@ -225,7 +228,7 @@ export const LandingPage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-300px" }}
+        viewport={{ once: true, margin: "-100px" }}
         className={styles.section}
       >
         <DustFuture />
@@ -234,7 +237,7 @@ export const LandingPage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-300px" }}
+        viewport={{ once: true, margin: "-100px" }}
         className={styles.section}
         style={{ overflow: "unset" }}
       >
@@ -243,7 +246,7 @@ export const LandingPage = () => {
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-300px" }}
+        viewport={{ once: true, margin: "-100px" }}
         className={styles.section}
         style={{ overflow: "unset" }}
       >
