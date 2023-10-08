@@ -1,47 +1,59 @@
 {
   "hash": "fa1abddb",
-  "browserHash": "860bdce9",
+  "browserHash": "2708df77",
   "optimized": {
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "984c09ea",
+      "fileHash": "9f0ef70b",
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "2f9b3ee7",
+      "fileHash": "987b0dd1",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "781bb9c0",
+      "fileHash": "d269e6e4",
       "needsInterop": true
     },
     "react-router-dom": {
       "src": "../../node_modules/react-router-dom/dist/index.js",
       "file": "react-router-dom.js",
-      "fileHash": "85802365",
+      "fileHash": "8a3b8482",
       "needsInterop": false
     },
     "three": {
       "src": "../../node_modules/three/build/three.module.js",
       "file": "three.js",
-      "fileHash": "ed29043d",
+      "fileHash": "42e6c939",
       "needsInterop": false
     },
     "framer-motion": {
       "src": "../../node_modules/framer-motion/dist/es/index.mjs",
       "file": "framer-motion.js",
-      "fileHash": "7deb01f6",
+      "fileHash": "e6c542e4",
       "needsInterop": false
     },
     "clsx": {
       "src": "../../node_modules/clsx/dist/clsx.mjs",
       "file": "clsx.js",
-      "fileHash": "02682b24",
+      "fileHash": "e49d0d65",
+      "needsInterop": false
+    },
+    "react-simple-maps": {
+      "src": "../../node_modules/react-simple-maps/dist/index.es.js",
+      "file": "react-simple-maps.js",
+      "fileHash": "722afe04",
+      "needsInterop": false
+    },
+    "d3-scale": {
+      "src": "../../node_modules/d3-scale/src/index.js",
+      "file": "d3-scale.js",
+      "fileHash": "df81b04a",
       "needsInterop": false
     }
   },
