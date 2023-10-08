@@ -26,6 +26,8 @@ button {
   outline: none;
 }
 
+/* TEXT STYLES */
+
 .heading1,
 .heading2,
 .heading3,
@@ -52,7 +54,7 @@ button {
 }
 
 .heading4 {
-  font-size: 14px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
 }
