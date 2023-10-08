@@ -11,7 +11,7 @@ interface SectionRefs {
 interface NavigationProps {
   refs: SectionRefs;
 }
-const Navigation = forwardRef<HTMLElement, NavigationProps>((props, ref) => {
+const Navigation = forwardRef<HTMLElement, NavigationProps>((props, _) => {
 
   const scrollIntoViewHandler = (sectionRef: React.RefObject<HTMLElement>) => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
