@@ -12,14 +12,10 @@ import { useTextures } from "../../context/textures";
 import { LoadingProgress } from "../../components/LoadingProgress";
 import { Iss } from "../../components/iss/Iss";
 import Navigation from "../../components/Navigation/Navigation";
-// @ts-ignore
-import Emit from "./Emit/Emit";
-// @ts-ignore
-import Data from "./Data/data";
-// @ts-ignore
-import FirstDust from "./dustPages/dustFirst/FirstDust";
-// @ts-ignore
-import SecondDust from "./dustPages/dustSecond/SecondDust";
+import { Emit } from "./Emit";
+import { Data } from "./Data";
+import { DustOne } from "./dust/DustOne";
+import { DustTwo } from "./dust/DustTwo";
 import { MethaneFirst } from "./methane/MethaneFirst";
 import { MethaneSecond } from "./methane/MethaneSecond";
 import Stories from "./stories/Stories";
@@ -74,10 +70,10 @@ export const LandingPage = () => {
         <Emit />
       </section>
       <section className={styles.section}>
-        <FirstDust />
+        <DustOne />
       </section>
       <section className={styles.section}>
-        <SecondDust />
+        <DustTwo />
       </section>
       <section className={styles.section}>
         <Data />

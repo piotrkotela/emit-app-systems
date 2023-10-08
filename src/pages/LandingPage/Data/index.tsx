@@ -1,7 +1,7 @@
-import styles from "./EmitPage.module.css";
+import styles from "./Data.module.css";
 import clsx from "clsx";
 
-const Data = () => {
+export const Data = () => {
   return (
     <div>
       <div className={styles.rain}></div>
@@ -25,5 +25,3 @@ const Data = () => {
     </div>
   );
 };
-
-export default Data;

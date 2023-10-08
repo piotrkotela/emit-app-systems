@@ -1,7 +1,7 @@
-import styles from "./EmitPage.module.css";
+import styles from "./Emit.module.css";
 import clsx from "clsx";
 
-const Emit = () => {
+export const Emit = () => {
   return (
     <div>
       <div className={styles.earth}></div>
@@ -29,5 +29,3 @@ const Emit = () => {
     </div>
   );
 };
-
-export default Emit;
