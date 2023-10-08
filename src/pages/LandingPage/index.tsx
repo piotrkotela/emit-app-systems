@@ -24,6 +24,7 @@ import { StoryPage } from "./stories/StoryPage";
 import GarbageImage from "../../assets/images/garbage.png";
 import FloodsImage from "../../assets/images/floods.png";
 import MosquitoImage from "../../assets/images/mosquito.png";
+import { Future } from "./future/Future";
 
 const stories: ComponentProps<typeof StoryPage>[] = [
   {
@@ -175,6 +176,15 @@ export const LandingPage = () => {
           <StoryPage {...storyProps} />
         </motion.section>
       ))}
+
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-300px" }}
+        className={styles.section}
+      >
+        <Future />
+      </motion.section>
     </div>
   );
 };
