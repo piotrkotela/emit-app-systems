@@ -34,6 +34,9 @@ import FloodsImage from "../../assets/images/floods.png";
 import MosquitoImage from "../../assets/images/mosquito.png";
 //@ts-ignore
 import { Future } from "./future/Future";
+import { DustFuture } from "./future/DustFuture";
+import { FireFuture } from "./future/FireFuture";
+import { LightPollution } from "./future/LightPollution";
 //@ts-ignore
 import Map from "./map/Map";
 
@@ -217,6 +220,34 @@ export const LandingPage = () => {
         className={styles.section}
       >
         <Future ref={futureRef} />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-300px" }}
+        className={styles.section}
+      >
+        <DustFuture />
+      </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-300px" }}
+        className={styles.section}
+        style={{ overflow: "unset" }}
+      >
+        <FireFuture />
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-300px" }}
+        className={styles.section}
+        style={{ overflow: "unset" }}
+      >
+        <LightPollution />
       </motion.section>
     </div>
   );
