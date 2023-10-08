@@ -10,23 +10,35 @@ import { Earth } from "../../components/earth/Earth";
 import { ComponentProps, useEffect, useState } from "react";
 import { useTextures } from "../../context/textures";
 import { LoadingProgress } from "../../components/LoadingProgress";
+// import { Iss } from "../../components/iss/Iss";
 import Navigation from "../../components/Navigation/Navigation";
+//@ts-ignore
 import { Emit } from "./Emit";
+//@ts-ignore
 import { Data } from "./Data";
+//@ts-ignore
 import { DustOne } from "./dust/DustOne";
+//@ts-ignore
 import { DustTwo } from "./dust/DustTwo";
+//@ts-ignore
 import { MethaneFirst } from "./methane/MethaneFirst";
+//@ts-ignore
 import { MethaneSecond } from "./methane/MethaneSecond";
+//@ts-ignore
 import Stories from "./stories/Stories";
+//@ts-ignore
 import { StoryPage } from "./stories/StoryPage";
 
 import GarbageImage from "../../assets/images/garbage.png";
 import FloodsImage from "../../assets/images/floods.png";
 import MosquitoImage from "../../assets/images/mosquito.png";
+//@ts-ignore
 import { Future } from "./future/Future";
 import { DustFuture } from "./future/DustFuture";
 import { FireFuture } from "./future/FireFuture";
 import { LightPollution } from "./future/LightPollution";
+//@ts-ignore
+import Map from "./map/Map";
 
 const stories: ComponentProps<typeof StoryPage>[] = [
   {
@@ -160,6 +172,14 @@ export const LandingPage = () => {
         className={styles.section}
       >
         <Data />
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-300px" }}
+        className={styles.section}
+      >
+        <Map />
       </motion.section>
       <motion.section
         initial={{ opacity: 0 }}
