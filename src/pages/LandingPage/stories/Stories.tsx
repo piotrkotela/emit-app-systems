@@ -1,10 +1,11 @@
+import { forwardRef } from 'react';
 import styles from "./Stories.module.css";
 
 import PlanetImage from "../../../assets/images/planet.png";
 
-const Stories = () => {
+const Stories = forwardRef<HTMLDivElement, {}>((_, ref) => {
   return (
-    <div className={styles.container}>
+    <div ref={ref} className={styles.container}>
       <img
         src={PlanetImage}
         className={styles.planet}
@@ -35,6 +36,6 @@ const Stories = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Stories;

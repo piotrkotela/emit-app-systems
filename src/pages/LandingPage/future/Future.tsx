@@ -1,9 +1,10 @@
+import { forwardRef } from "react";
 import styles from "./Future.module.css";
 import BgImage from "./assets/8.png";
 
-export const Future = () => {
+export const Future = forwardRef<HTMLDivElement, {}>((_, ref) => {
   return (
-    <div className={styles.container}>
+    <div ref={ref} className={styles.container}>
       <div className={styles.layout}>
         <img src={BgImage} className={styles.bg_image} />
         <div className={styles.content_container}>
@@ -35,4 +36,4 @@ export const Future = () => {
       </div>
     </div>
   );
-};
+});

@@ -7,7 +7,7 @@ import { HeroTitle } from "../../components/HeroTItle";
 import { textAnimation } from "../../animations/text";
 import { jsxWordSplit } from "../../lib/jsxSplit";
 import { Earth } from "../../components/earth/Earth";
-import { ComponentProps, useEffect, useState } from "react";
+import { ComponentProps, useEffect, useRef, useState } from "react";
 import { useTextures } from "../../context/textures";
 import { LoadingProgress } from "../../components/LoadingProgress";
 // import { Iss } from "../../components/iss/Iss";
@@ -83,6 +83,10 @@ export const LandingPage = () => {
   const { loadingManager } = useTextures();
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
+  const emitRef = useRef<any>(null);
+  const mapRef = useRef<any>(null);
+  const futureRef = useRef<any>(null);
+  const storiesRef = useRef<any>(null);
 
   useEffect(() => {
     loadingManager.onProgress = (_, itemsLoaded, itemsTotal) => {
@@ -100,8 +104,15 @@ export const LandingPage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <Navigation />
-      <section className={clsx(styles.section, styles.hero_section)}>
+      <Navigation
+        refs={{
+          emit: emitRef,
+          map: mapRef,
+          story: storiesRef,
+          future: futureRef,
+        }}
+      />
+      <section ref={emitRef} className={clsx(styles.section, styles.hero_section)}>
         <div className={styles.stars}></div>
         <div className={styles.stars}></div>
         <div className={styles.stars}></div>
@@ -176,7 +187,7 @@ export const LandingPage = () => {
         viewport={{ once: true, margin: "-300px" }}
         className={styles.section}
       >
-        <Map />
+        <Map ref={mapRef} />
       </motion.section>
       <motion.section
         initial={{ opacity: 0 }}
@@ -184,7 +195,7 @@ export const LandingPage = () => {
         viewport={{ once: true, margin: "-300px" }}
         className={styles.section}
       >
-        <Stories />
+        <Stories ref={storiesRef}/>
       </motion.section>
 
       {stories.map((storyProps, i) => (
@@ -205,7 +216,7 @@ export const LandingPage = () => {
         viewport={{ once: true, margin: "-300px" }}
         className={styles.section}
       >
-        <Future />
+        <Future ref={futureRef} />
       </motion.section>
     </div>
   );

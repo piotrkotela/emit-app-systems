@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import MapChart from "../../../components/Map/MapChart";
 import styles from "./Map.module.css";
 // @ts-ignore
@@ -15,10 +15,10 @@ interface imeiCountry {
   imei_idx: number;
 }
 
-const Map = () => {
+const Map = forwardRef<HTMLDivElement, {}>((_, ref) => {
   const [content, setContent] = useState<imeiCountry | undefined>(undefined);
   return (
-    <div className={styles.mapContainer}>
+    <div ref={ref} className={styles.mapContainer}>
       <div className={styles.mapLeft}>
         <p>map</p>
         <p>Industrial Methane Emission Index (IMEI)</p>
@@ -43,5 +43,5 @@ const Map = () => {
       </div>
     </div>
   );
-};
+});
 export default Map;
